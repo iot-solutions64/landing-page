@@ -17,6 +17,10 @@
     margin: 3% 5%;
 }
 
+.context-section {
+    height: 100vh;
+}
+
 .container h1{
     color: #FFFFFF;
     margin: 0 0 35px 0;
