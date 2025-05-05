@@ -17,8 +17,8 @@
     margin: 3% 5%;
 }
 
-.context-section {
-    height: 100vh;
+main .context-section {
+    height: 100vh; 
 }
 
 .container h1{
