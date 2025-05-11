@@ -1,6 +1,15 @@
 body {
     background: linear-gradient(rgba(5, 7, 12, 0.4), rgba(5, 7, 12, 0.4)), url("img/contact-background.jpg") no-repeat center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  
+    margin: 0;
+}
+
+main {
+    margin-top: 110px;
+    flex: 1; 
 }
 
 h1{
@@ -14,16 +23,16 @@ h1{
 
 #formulario {
     display: flex;
-    justify-content: center; /* Alinea el formulario al centro */
+    justify-content: center;  
 }
 
 form {
     padding: 2%;
     border-radius: 20px;
-    max-width: 600px; /* Limita el ancho del formulario */
+    max-width: 600px;  
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); 
 }
 
 #nombre-completo {
@@ -53,17 +62,36 @@ input[type="text"] {
     box-sizing: border-box; 
 }
 
+/*footer section*/
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    width: 100%; 
+    margin: auto;
     background-color: var(--secondary-color);
-    min-height: 100px;
-    align-items: center;
-    justify-content: space-around;
     display: flex;
     flex-direction: row;
-    transition: all 0.5s ease;
+    justify-content: space-between;
+    color: var(--text-primary-color);
+    padding: 8px 13px;
+    gap: 15px;
+}
+
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-icons li a i {
+    font-size: 24px;
+    color: var(--text-primary-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons li a:hover i {
+    color: var(--secondary-color-second);
+    transform: scale(1.2);
 }
 
 input[type="text"]::placeholder,
@@ -94,37 +122,46 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 850px) {
-    #nombre-completo{
+    #formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        justify-content: center;   
+    }
+
+    #nombre-completo {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
+        width: 100%;  
     }
 
     label {
         font-size: 20px;
         line-height: normal;
+        text-align: center; 
     }
-    
-    .contactoFormulario{
-        margin-left: 15px;
+
+    .contactoFormulario {
+        margin: 0 auto;  
+        width: 100%; 
     }
 
     #formNombre,
     #formApellidos,
     #formCorreo,
-    #formAsunto {
-        width: 90%;
-        max-width: 100%;
-        margin-bottom: 15px;
-    }
-
+    #formAsunto,
     #formMensaje {
-        width: 90%;
+        width: 100%;  
         max-width: 100%;
+        margin: 10px auto;  
     }
 
     input[type="text"],
-    input[type="submit"] {
+    input[type="submit"],
+    textarea {
         font-size: 18px;
+        width: 100%;  
+        margin: 10px auto; 
     }
 }
 
@@ -139,5 +176,17 @@ input[type="submit"]:hover {
 @media (max-width: 742px) {
     form{
         margin-top: 15%;
+    }
+}
+
+@media(max-width: 600px){
+    footer{
+        display: flex;
+        transition: flex-direction 0.5s ease;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px auto;
+        gap: 15px; 
     }
 }

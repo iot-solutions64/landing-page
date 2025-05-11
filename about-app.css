@@ -1,7 +1,8 @@
-.context-section {
+body {
     position: relative;
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,16 +11,16 @@
     text-align: center;
 }
 
-/**/
+main {
+    margin-top: 110px;
+}
+
 .container{
     display: flex;
     flex-direction: column;
     margin: 3% 5%;
 }
 
-main .context-section {
-    height: 100vh; 
-}
 
 .container h1{
     color: #FFFFFF;
@@ -47,20 +48,38 @@ main .context-section {
 .about-description{
     padding: 10px 0;
 }
+ 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    width: 100%;  
     background-color: var(--secondary-color);
-    min-height: 100px;
-    align-items: center;
-    justify-content: space-around;
     display: flex;
     flex-direction: row;
-    transition: all 0.5s ease;
+    justify-content: space-between;
+    color: var(--text-primary-color);
+    padding: 8px 13px;
 }
+
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-icons li a i {
+    font-size: 24px;
+    color: var(--text-primary-color);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons li a:hover i {
+    color: var(--secondary-color-second);
+    transform: scale(1.2);
+}
+
 .card {
-    background-color: white;
+    background-color: var(--text-primary-color);
     padding: 10px;
     margin: 10px 0;
     width: 100%;
@@ -75,7 +94,7 @@ footer {
     text-align: center;
     font-size: 40px;
     padding-bottom: 1rem;
-    color: #FFFFFF;
+    color: var(--text-primary-color);
     text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.1);
     font-weight: bold;
 }
@@ -85,26 +104,35 @@ footer {
     width: 75%;
     font-size: 20px;
     text-align: center;
-}
+} 
  
- 
-
-.farmer p{
-    color: #FFFFFF;
+.farmer-card p{
+    color: var(--text-primary-color);
 }
 
-.farmer{
-    border-radius: 0 10px 10px 0;
-    background-color: #08476d;
+.farmer-card .card-title {
+    margin: 0;
+}
+.farmer-card {
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    overflow: hidden; 
+    padding: 10px;
+    margin: 20px auto;  
+    width: 90%;  
+    max-width: 1000px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
 }
 
 /*----------Flip Cards--------------------*/
 .cards-grid {
     display: flex;
-    grid-gap: 80px;
+    grid-gap: 50px;
     padding-bottom: 60px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 /* FLIP CARD */
@@ -154,8 +182,9 @@ footer {
     background-color: #FFFFFF;
     transform: rotateY(180deg);
 }
+
 .flip-card:hover .flip-card-inner {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
 }
 
 @media (max-width: 1630px) { 
@@ -172,5 +201,17 @@ footer {
 @media (max-width: 745px){
     .container{
         margin-top: 15%;
+    }
+}
+
+@media(max-width: 600px){
+    footer{
+        display: flex;
+        transition: flex-direction 0.5s ease;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px auto;
+        gap: 15px; 
     }
 }
