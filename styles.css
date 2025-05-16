@@ -212,7 +212,7 @@ footer {
     } 
 }
 
-@media (max-width: 1482px){
+@media (max-width: 900px){
     #menu-icon{
         display: block;
     }
