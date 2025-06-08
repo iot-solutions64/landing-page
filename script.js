@@ -1,4 +1,4 @@
-//header
+//encabezado
 let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -82,3 +82,5 @@ btn[3].onclick = function(){
     }
     this.classList.add("active");
 }
+
+ 

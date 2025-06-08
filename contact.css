@@ -49,6 +49,7 @@ label {
 }
 
 textarea,
+input[type="email"],
 input[type="text"] {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -94,6 +95,7 @@ footer {
     transform: scale(1.2);
 }
 
+input[type="email"]::placeholder
 input[type="text"]::placeholder,
 textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
@@ -121,7 +123,45 @@ input[type="submit"]:hover {
     background-color: var(--secondary-color-second);
     color: var(--secondary-color)
 }
-
+ 
+.modal-confirmacion {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+.modal-contenido {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    min-width: 280px;
+    max-width: 90vw;
+    margin: auto;
+}
+.cerrar-modal {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+#botonCerrarModal {
+    margin-top: 20px;
+    padding: 8px 24px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#botonCerrarModal:hover {
+    background: #388e3c;
+}
 @media only screen and (max-width: 850px) {
     #formulario {
         display: flex;
@@ -158,6 +198,7 @@ input[type="submit"]:hover {
         margin: 10px auto;  
     }
 
+    input[type="email"],
     input[type="text"],
     input[type="submit"],
     textarea {
